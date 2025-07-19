@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-todo-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn todo_project.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11
